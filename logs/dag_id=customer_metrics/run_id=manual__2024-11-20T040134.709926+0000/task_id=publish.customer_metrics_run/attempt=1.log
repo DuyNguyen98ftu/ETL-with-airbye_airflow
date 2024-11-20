@@ -1,0 +1,65 @@
+[2024-11-20T04:03:47.944+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: customer_metrics.publish.customer_metrics_run manual__2024-11-20T04:01:34.709926+00:00 [queued]>
+[2024-11-20T04:03:47.956+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: customer_metrics.publish.customer_metrics_run manual__2024-11-20T04:01:34.709926+00:00 [queued]>
+[2024-11-20T04:03:47.957+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-11-20T04:03:47.972+0000] {taskinstance.py:2214} INFO - Executing <Task(DbtRunLocalOperator): publish.customer_metrics_run> on 2024-11-20 04:01:34.709926+00:00
+[2024-11-20T04:03:47.977+0000] {standard_task_runner.py:60} INFO - Started process 14418 to run task
+[2024-11-20T04:03:47.980+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'customer_metrics', 'publish.customer_metrics_run', 'manual__2024-11-20T04:01:34.709926+00:00', '--job-id', '136', '--raw', '--subdir', 'DAGS_FOLDER/customer_metrics.py', '--cfg-path', '/tmp/tmpnykeoojm']
+[2024-11-20T04:03:47.982+0000] {standard_task_runner.py:88} INFO - Job 136: Subtask publish.customer_metrics_run
+[2024-11-20T04:03:48.023+0000] {task_command.py:423} INFO - Running <TaskInstance: customer_metrics.publish.customer_metrics_run manual__2024-11-20T04:01:34.709926+00:00 [running]> on host 4cf1ca1acf00
+[2024-11-20T04:03:48.097+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='customer_metrics' AIRFLOW_CTX_TASK_ID='publish.customer_metrics_run' AIRFLOW_CTX_EXECUTION_DATE='2024-11-20T04:01:34.709926+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-20T04:01:34.709926+00:00'
+[2024-11-20T04:03:48.099+0000] {local.py:202} INFO - Cloning project to writable temp directory /tmp/tmpn9s2tcnd from /opt/airflow/include/dbt/fraud
+[2024-11-20T04:03:48.103+0000] {config.py:253} INFO - Using user-supplied profiles.yml at /opt/airflow/include/dbt/fraud/profiles.yml
+[2024-11-20T04:03:48.104+0000] {local.py:235} INFO - Trying to run the command:
+ ['/home/airflow/.local/bin/dbt', 'run', '--models', 'customer_metrics', '--profiles-dir', '/opt/airflow/include/dbt/fraud', '--profile', 'fraud', '--target', 'dev']
+From /tmp/tmpn9s2tcnd
+[2024-11-20T04:03:48.105+0000] {local.py:236} INFO - Using environment variables keys: dict_keys(['AIRFLOW_CTX_DAG_OWNER', 'AIRFLOW_CTX_DAG_ID', 'AIRFLOW_CTX_TASK_ID', 'AIRFLOW_CTX_EXECUTION_DATE', 'AIRFLOW_CTX_TRY_NUMBER', 'AIRFLOW_CTX_DAG_RUN_ID'])
+[2024-11-20T04:03:48.105+0000] {subprocess.py:60} INFO - Tmp dir root location: 
+ /tmp
+[2024-11-20T04:03:48.106+0000] {subprocess.py:73} INFO - Running command: ['/home/airflow/.local/bin/dbt', 'run', '--models', 'customer_metrics', '--profiles-dir', '/opt/airflow/include/dbt/fraud', '--profile', 'fraud', '--target', 'dev']
+[2024-11-20T04:03:48.114+0000] {subprocess.py:84} INFO - Command output:
+[2024-11-20T04:03:49.706+0000] {subprocess.py:94} INFO - [0m04:03:49  Running with dbt=1.8.7
+[2024-11-20T04:03:51.107+0000] {subprocess.py:94} INFO - [0m04:03:51  Registered adapter: snowflake=1.8.4
+[2024-11-20T04:03:51.140+0000] {subprocess.py:94} INFO - [0m04:03:51  Unable to do partial parsing because saved manifest not found. Starting full parse.
+[2024-11-20T04:03:53.122+0000] {subprocess.py:94} INFO - [0m04:03:53  Found 3 models, 454 macros
+[2024-11-20T04:03:53.124+0000] {subprocess.py:94} INFO - [0m04:03:53
+[2024-11-20T04:03:56.927+0000] {subprocess.py:94} INFO - [0m04:03:56  Concurrency: 1 threads (target='dev')
+[2024-11-20T04:03:56.928+0000] {subprocess.py:94} INFO - [0m04:03:56
+[2024-11-20T04:03:56.936+0000] {subprocess.py:94} INFO - [0m04:03:56  1 of 1 START sql table model AIRBYTE_SCHEMA.customer_metrics ................... [RUN]
+[2024-11-20T04:03:58.801+0000] {subprocess.py:94} INFO - [0m04:03:58  1 of 1 ERROR creating sql table model AIRBYTE_SCHEMA.customer_metrics .......... [[31mERROR[0m in 1.86s]
+[2024-11-20T04:03:58.805+0000] {subprocess.py:94} INFO - [0m04:03:58
+[2024-11-20T04:03:58.806+0000] {subprocess.py:94} INFO - [0m04:03:58  Finished running 1 table model in 0 hours 0 minutes and 5.68 seconds (5.68s).
+[2024-11-20T04:03:58.840+0000] {subprocess.py:94} INFO - [0m04:03:58
+[2024-11-20T04:03:58.841+0000] {subprocess.py:94} INFO - [0m04:03:58  [31mCompleted with 1 error and 0 warnings:[0m
+[2024-11-20T04:03:58.842+0000] {subprocess.py:94} INFO - [0m04:03:58
+[2024-11-20T04:03:58.843+0000] {subprocess.py:94} INFO - [0m04:03:58    Database Error in model customer_metrics (models/customer_metrics.sql)
+[2024-11-20T04:03:58.843+0000] {subprocess.py:94} INFO -   001003 (42000): SQL compilation error:
+[2024-11-20T04:03:58.844+0000] {subprocess.py:94} INFO -   syntax error line 22 at position 24 unexpected ';'.
+[2024-11-20T04:03:58.845+0000] {subprocess.py:94} INFO -   compiled code at target/run/fraud/models/customer_metrics.sql
+[2024-11-20T04:03:58.845+0000] {subprocess.py:94} INFO - [0m04:03:58
+[2024-11-20T04:03:58.846+0000] {subprocess.py:94} INFO - [0m04:03:58  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[2024-11-20T04:04:00.045+0000] {subprocess.py:98} INFO - Command exited with return code 1
+[2024-11-20T04:04:00.058+0000] {local.py:138} WARNING - Artifact schema version: https://schemas.getdbt.com/dbt/manifest/v12.json is above dbt-ol supported version 7. This might cause errors.
+[2024-11-20T04:04:00.058+0000] {local.py:138} WARNING - Artifact schema version: https://schemas.getdbt.com/dbt/run-results/v6.json is above dbt-ol supported version 5. This might cause errors.
+[2024-11-20T04:04:00.067+0000] {local.py:252} INFO - Inlets: []
+[2024-11-20T04:04:00.067+0000] {local.py:253} INFO - Outlets: []
+[2024-11-20T04:04:00.068+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2024-11-20T04:04:00.092+0000] {dag.py:3834} INFO - Setting next_dagrun for customer_metrics to 2024-11-20 00:00:00+00:00, run_after=2024-11-21 00:00:00+00:00
+[2024-11-20T04:04:00.122+0000] {taskinstance.py:2728} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/cosmos/operators/base.py", line 246, in execute
+    self.build_and_run_cmd(context=context, cmd_flags=self.add_cmd_flags())
+  File "/home/airflow/.local/lib/python3.8/site-packages/cosmos/operators/local.py", line 370, in build_and_run_cmd
+    result = self.run_command(cmd=dbt_cmd, env=env, context=context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/cosmos/operators/local.py", line 257, in run_command
+    self.exception_handling(result)
+  File "/home/airflow/.local/lib/python3.8/site-packages/cosmos/operators/local.py", line 136, in exception_handling
+    raise AirflowException(
+airflow.exceptions.AirflowException: ('dbt command failed. The command returned a non-zero exit code 1. Details: ', '\x1b[0m04:03:49  Running with dbt=1.8.7', '\x1b[0m04:03:51  Registered adapter: snowflake=1.8.4', '\x1b[0m04:03:51  Unable to do partial parsing because saved manifest not found. Starting full parse.', '\x1b[0m04:03:53  Found 3 models, 454 macros', '\x1b[0m04:03:53', "\x1b[0m04:03:56  Concurrency: 1 threads (target='dev')", '\x1b[0m04:03:56', '\x1b[0m04:03:56  1 of 1 START sql table model AIRBYTE_SCHEMA.customer_metrics ................... [RUN]', '\x1b[0m04:03:58  1 of 1 ERROR creating sql table model AIRBYTE_SCHEMA.customer_metrics .......... [\x1b[31mERROR\x1b[0m in 1.86s]', '\x1b[0m04:03:58', '\x1b[0m04:03:58  Finished running 1 table model in 0 hours 0 minutes and 5.68 seconds (5.68s).', '\x1b[0m04:03:58', '\x1b[0m04:03:58  \x1b[31mCompleted with 1 error and 0 warnings:\x1b[0m', '\x1b[0m04:03:58', '\x1b[0m04:03:58    Database Error in model customer_metrics (models/customer_metrics.sql)', '  001003 (42000): SQL compilation error:', "  syntax error line 22 at position 24 unexpected ';'.", '  compiled code at target/run/fraud/models/customer_metrics.sql', '\x1b[0m04:03:58', '\x1b[0m04:03:58  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1')
+[2024-11-20T04:04:00.125+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=customer_metrics, task_id=publish.customer_metrics_run, execution_date=20241120T040134, start_date=20241120T040347, end_date=20241120T040400
+[2024-11-20T04:04:00.138+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 136 for task publish.customer_metrics_run (('dbt command failed. The command returned a non-zero exit code 1. Details: ', '\x1b[0m04:03:49  Running with dbt=1.8.7', '\x1b[0m04:03:51  Registered adapter: snowflake=1.8.4', '\x1b[0m04:03:51  Unable to do partial parsing because saved manifest not found. Starting full parse.', '\x1b[0m04:03:53  Found 3 models, 454 macros', '\x1b[0m04:03:53', "\x1b[0m04:03:56  Concurrency: 1 threads (target='dev')", '\x1b[0m04:03:56', '\x1b[0m04:03:56  1 of 1 START sql table model AIRBYTE_SCHEMA.customer_metrics ................... [RUN]', '\x1b[0m04:03:58  1 of 1 ERROR creating sql table model AIRBYTE_SCHEMA.customer_metrics .......... [\x1b[31mERROR\x1b[0m in 1.86s]', '\x1b[0m04:03:58', '\x1b[0m04:03:58  Finished running 1 table model in 0 hours 0 minutes and 5.68 seconds (5.68s).', '\x1b[0m04:03:58', '\x1b[0m04:03:58  \x1b[31mCompleted with 1 error and 0 warnings:\x1b[0m', '\x1b[0m04:03:58', '\x1b[0m04:03:58    Database Error in model customer_metrics (models/customer_metrics.sql)', '  001003 (42000): SQL compilation error:', "  syntax error line 22 at position 24 unexpected ';'.", '  compiled code at target/run/fraud/models/customer_metrics.sql', '\x1b[0m04:03:58', '\x1b[0m04:03:58  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1'); 14418)
+[2024-11-20T04:04:00.166+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-11-20T04:04:00.181+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check

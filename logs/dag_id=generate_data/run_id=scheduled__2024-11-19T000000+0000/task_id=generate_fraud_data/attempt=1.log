@@ -1,0 +1,33 @@
+[2024-11-20T01:20:32.919+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: generate_data.generate_fraud_data scheduled__2024-11-19T00:00:00+00:00 [queued]>
+[2024-11-20T01:20:32.930+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: generate_data.generate_fraud_data scheduled__2024-11-19T00:00:00+00:00 [queued]>
+[2024-11-20T01:20:32.930+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-11-20T01:20:32.946+0000] {taskinstance.py:2214} INFO - Executing <Task(_PythonDecoratedOperator): generate_fraud_data> on 2024-11-19 00:00:00+00:00
+[2024-11-20T01:20:32.951+0000] {standard_task_runner.py:60} INFO - Started process 216 to run task
+[2024-11-20T01:20:32.955+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'generate_data', 'generate_fraud_data', 'scheduled__2024-11-19T00:00:00+00:00', '--job-id', '84', '--raw', '--subdir', 'DAGS_FOLDER/generate_data.py', '--cfg-path', '/tmp/tmpm3xn4hp_']
+[2024-11-20T01:20:32.957+0000] {standard_task_runner.py:88} INFO - Job 84: Subtask generate_fraud_data
+[2024-11-20T01:20:33.022+0000] {task_command.py:423} INFO - Running <TaskInstance: generate_data.generate_fraud_data scheduled__2024-11-19T00:00:00+00:00 [running]> on host 4cf1ca1acf00
+[2024-11-20T01:20:33.143+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='generate_data' AIRFLOW_CTX_TASK_ID='generate_fraud_data' AIRFLOW_CTX_EXECUTION_DATE='2024-11-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-19T00:00:00+00:00'
+[2024-11-20T01:20:36.449+0000] {logging_mixin.py:188} INFO - Error inserting labeled transaction data: 2005 (HY000): Unknown MySQL server host 'mysql' (-2)
+[2024-11-20T01:20:36.450+0000] {taskinstance.py:2728} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/generate_data.py", line 16, in generate_fraud_data
+    _generate_fraud_data(data_interval_start)
+  File "/opt/airflow/include/scripts/detection_generator.py", line 81, in main
+    insert_labeled_transactions(transaction_ids)
+  File "/opt/airflow/include/scripts/detection_generator.py", line 75, in insert_labeled_transactions
+    if conn is not None and conn.is_connected():
+UnboundLocalError: local variable 'conn' referenced before assignment
+[2024-11-20T01:20:36.483+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=generate_data, task_id=generate_fraud_data, execution_date=20241119T000000, start_date=20241120T012032, end_date=20241120T012036
+[2024-11-20T01:20:36.504+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 84 for task generate_fraud_data (local variable 'conn' referenced before assignment; 216)
+[2024-11-20T01:20:36.533+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-11-20T01:20:36.558+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check

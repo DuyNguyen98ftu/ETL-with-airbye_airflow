@@ -1,0 +1,46 @@
+[2024-11-20T03:25:16.043+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: customer_metrics.publish.labeled_transaction_run manual__2024-11-20T03:23:08.473931+00:00 [queued]>
+[2024-11-20T03:25:16.052+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: customer_metrics.publish.labeled_transaction_run manual__2024-11-20T03:23:08.473931+00:00 [queued]>
+[2024-11-20T03:25:16.052+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-11-20T03:25:16.065+0000] {taskinstance.py:2214} INFO - Executing <Task(DbtRunLocalOperator): publish.labeled_transaction_run> on 2024-11-20 03:23:08.473931+00:00
+[2024-11-20T03:25:16.069+0000] {standard_task_runner.py:60} INFO - Started process 10667 to run task
+[2024-11-20T03:25:16.072+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'customer_metrics', 'publish.labeled_transaction_run', 'manual__2024-11-20T03:23:08.473931+00:00', '--job-id', '117', '--raw', '--subdir', 'DAGS_FOLDER/customer_metrics.py', '--cfg-path', '/tmp/tmp__0rqg_m']
+[2024-11-20T03:25:16.073+0000] {standard_task_runner.py:88} INFO - Job 117: Subtask publish.labeled_transaction_run
+[2024-11-20T03:25:16.119+0000] {task_command.py:423} INFO - Running <TaskInstance: customer_metrics.publish.labeled_transaction_run manual__2024-11-20T03:23:08.473931+00:00 [running]> on host 4cf1ca1acf00
+[2024-11-20T03:25:16.193+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='customer_metrics' AIRFLOW_CTX_TASK_ID='publish.labeled_transaction_run' AIRFLOW_CTX_EXECUTION_DATE='2024-11-20T03:23:08.473931+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-20T03:23:08.473931+00:00'
+[2024-11-20T03:25:16.195+0000] {local.py:202} INFO - Cloning project to writable temp directory /tmp/tmpdq165drr from /opt/airflow/include/dbt/fraud
+[2024-11-20T03:25:16.198+0000] {config.py:253} INFO - Using user-supplied profiles.yml at /opt/airflow/include/dbt/fraud/profiles.yml
+[2024-11-20T03:25:16.199+0000] {local.py:235} INFO - Trying to run the command:
+ ['/home/airflow/.local/bin/dbt', 'run', '--models', 'labeled_transaction', '--profiles-dir', '/opt/airflow/include/dbt/fraud', '--profile', 'fraud', '--target', 'dev']
+From /tmp/tmpdq165drr
+[2024-11-20T03:25:16.200+0000] {local.py:236} INFO - Using environment variables keys: dict_keys(['AIRFLOW_CTX_DAG_OWNER', 'AIRFLOW_CTX_DAG_ID', 'AIRFLOW_CTX_TASK_ID', 'AIRFLOW_CTX_EXECUTION_DATE', 'AIRFLOW_CTX_TRY_NUMBER', 'AIRFLOW_CTX_DAG_RUN_ID'])
+[2024-11-20T03:25:16.200+0000] {subprocess.py:60} INFO - Tmp dir root location: 
+ /tmp
+[2024-11-20T03:25:16.201+0000] {subprocess.py:73} INFO - Running command: ['/home/airflow/.local/bin/dbt', 'run', '--models', 'labeled_transaction', '--profiles-dir', '/opt/airflow/include/dbt/fraud', '--profile', 'fraud', '--target', 'dev']
+[2024-11-20T03:25:16.209+0000] {subprocess.py:84} INFO - Command output:
+[2024-11-20T03:25:17.775+0000] {subprocess.py:94} INFO - [0m03:25:17  Running with dbt=1.8.7
+[2024-11-20T03:25:18.875+0000] {subprocess.py:94} INFO - [0m03:25:18  Registered adapter: snowflake=1.8.4
+[2024-11-20T03:25:18.907+0000] {subprocess.py:94} INFO - [0m03:25:18  Unable to do partial parsing because saved manifest not found. Starting full parse.
+[2024-11-20T03:25:20.847+0000] {subprocess.py:94} INFO - [0m03:25:20  Found 3 models, 454 macros
+[2024-11-20T03:25:20.849+0000] {subprocess.py:94} INFO - [0m03:25:20
+[2024-11-20T03:25:24.581+0000] {subprocess.py:94} INFO - [0m03:25:24  Concurrency: 1 threads (target='dev')
+[2024-11-20T03:25:24.582+0000] {subprocess.py:94} INFO - [0m03:25:24
+[2024-11-20T03:25:24.588+0000] {subprocess.py:94} INFO - [0m03:25:24  1 of 1 START sql table model AIRBYTE_SCHEMA.labeled_transaction ................ [RUN]
+[2024-11-20T03:25:26.915+0000] {subprocess.py:94} INFO - [0m03:25:26  1 of 1 OK created sql table model AIRBYTE_SCHEMA.labeled_transaction ........... [[32mSUCCESS 1[0m in 2.32s]
+[2024-11-20T03:25:26.918+0000] {subprocess.py:94} INFO - [0m03:25:26
+[2024-11-20T03:25:26.918+0000] {subprocess.py:94} INFO - [0m03:25:26  Finished running 1 table model in 0 hours 0 minutes and 6.07 seconds (6.07s).
+[2024-11-20T03:25:26.952+0000] {subprocess.py:94} INFO - [0m03:25:26
+[2024-11-20T03:25:26.953+0000] {subprocess.py:94} INFO - [0m03:25:26  [32mCompleted successfully[0m
+[2024-11-20T03:25:26.953+0000] {subprocess.py:94} INFO - [0m03:25:26
+[2024-11-20T03:25:26.954+0000] {subprocess.py:94} INFO - [0m03:25:26  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[2024-11-20T03:25:28.167+0000] {subprocess.py:98} INFO - Command exited with return code 0
+[2024-11-20T03:25:28.178+0000] {local.py:138} WARNING - Artifact schema version: https://schemas.getdbt.com/dbt/manifest/v12.json is above dbt-ol supported version 7. This might cause errors.
+[2024-11-20T03:25:28.179+0000] {local.py:138} WARNING - Artifact schema version: https://schemas.getdbt.com/dbt/run-results/v6.json is above dbt-ol supported version 5. This might cause errors.
+[2024-11-20T03:25:28.185+0000] {local.py:252} INFO - Inlets: []
+[2024-11-20T03:25:28.186+0000] {local.py:253} INFO - Outlets: [Dataset(uri='snowflake://qab09154.us-east-1.aws/AIRBYTE_DATABASE.AIRBYTE_SCHEMA.labeled_transaction', extra=None)]
+[2024-11-20T03:25:28.187+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2024-11-20T03:25:28.209+0000] {dag.py:3834} INFO - Setting next_dagrun for customer_metrics to 2024-11-20 00:00:00+00:00, run_after=2024-11-21 00:00:00+00:00
+[2024-11-20T03:25:28.237+0000] {local.py:371} INFO - [0m03:25:26  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[2024-11-20T03:25:28.242+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.8/site-packages/airflow/models/baseoperator.py:1469 RemovedInAirflow3Warning: Passing 'execution_date' to 'TaskInstance.xcom_push()' is deprecated.
+[2024-11-20T03:25:28.266+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=customer_metrics, task_id=publish.labeled_transaction_run, execution_date=20241120T032308, start_date=20241120T032516, end_date=20241120T032528
+[2024-11-20T03:25:28.316+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-11-20T03:25:28.328+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,13 @@
+[2024-11-20T03:18:29.503+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: customer_metrics.airbyte_jobs_done manual__2024-11-20T03:17:14.554825+00:00 [queued]>
+[2024-11-20T03:18:29.513+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: customer_metrics.airbyte_jobs_done manual__2024-11-20T03:17:14.554825+00:00 [queued]>
+[2024-11-20T03:18:29.514+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-11-20T03:18:29.527+0000] {taskinstance.py:2214} INFO - Executing <Task(_PythonDecoratedOperator): airbyte_jobs_done> on 2024-11-20 03:17:14.554825+00:00
+[2024-11-20T03:18:29.540+0000] {standard_task_runner.py:60} INFO - Started process 9763 to run task
+[2024-11-20T03:18:29.543+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'customer_metrics', 'airbyte_jobs_done', 'manual__2024-11-20T03:17:14.554825+00:00', '--job-id', '106', '--raw', '--subdir', 'DAGS_FOLDER/customer_metrics.py', '--cfg-path', '/tmp/tmp7x1ki7q3']
+[2024-11-20T03:18:29.545+0000] {standard_task_runner.py:88} INFO - Job 106: Subtask airbyte_jobs_done
+[2024-11-20T03:18:29.601+0000] {task_command.py:423} INFO - Running <TaskInstance: customer_metrics.airbyte_jobs_done manual__2024-11-20T03:17:14.554825+00:00 [running]> on host 4cf1ca1acf00
+[2024-11-20T03:18:29.683+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='customer_metrics' AIRFLOW_CTX_TASK_ID='airbyte_jobs_done' AIRFLOW_CTX_EXECUTION_DATE='2024-11-20T03:17:14.554825+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-20T03:17:14.554825+00:00'
+[2024-11-20T03:18:29.684+0000] {python.py:202} INFO - Done. Returned value was: True
+[2024-11-20T03:18:29.708+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=customer_metrics, task_id=airbyte_jobs_done, execution_date=20241120T031714, start_date=20241120T031829, end_date=20241120T031829
+[2024-11-20T03:18:29.756+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-11-20T03:18:29.782+0000] {taskinstance.py:3309} INFO - 1 downstream tasks scheduled from follow-on schedule check

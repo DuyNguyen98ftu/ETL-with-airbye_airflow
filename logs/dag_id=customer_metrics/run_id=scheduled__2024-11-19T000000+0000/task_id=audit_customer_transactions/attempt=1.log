@@ -1,0 +1,209 @@
+[2024-11-20T01:22:08.185+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: customer_metrics.audit_customer_transactions scheduled__2024-11-19T00:00:00+00:00 [queued]>
+[2024-11-20T01:22:08.192+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: customer_metrics.audit_customer_transactions scheduled__2024-11-19T00:00:00+00:00 [queued]>
+[2024-11-20T01:22:08.192+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-11-20T01:22:08.203+0000] {taskinstance.py:2214} INFO - Executing <Task(_PythonExternalDecoratedOperator): audit_customer_transactions> on 2024-11-19 00:00:00+00:00
+[2024-11-20T01:22:08.216+0000] {standard_task_runner.py:60} INFO - Started process 495 to run task
+[2024-11-20T01:22:08.218+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'customer_metrics', 'audit_customer_transactions', 'scheduled__2024-11-19T00:00:00+00:00', '--job-id', '89', '--raw', '--subdir', 'DAGS_FOLDER/customer_metrics.py', '--cfg-path', '/tmp/tmp81c7t0tx']
+[2024-11-20T01:22:08.220+0000] {standard_task_runner.py:88} INFO - Job 89: Subtask audit_customer_transactions
+[2024-11-20T01:22:08.259+0000] {task_command.py:423} INFO - Running <TaskInstance: customer_metrics.audit_customer_transactions scheduled__2024-11-19T00:00:00+00:00 [running]> on host 4cf1ca1acf00
+[2024-11-20T01:22:08.326+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='customer_metrics' AIRFLOW_CTX_TASK_ID='audit_customer_transactions' AIRFLOW_CTX_EXECUTION_DATE='2024-11-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-19T00:00:00+00:00'
+[2024-11-20T01:22:08.360+0000] {python.py:913} WARNING - When checking for Airflow installed in virtual environment got Command '['/opt/airflow/soda_venv/bin/python', '-c', 'from airflow import __version__; print(__version__)']' returned non-zero exit status 1.
+[2024-11-20T01:22:08.362+0000] {python.py:914} WARNING - This means that Airflow is not properly installed by  /opt/airflow/soda_venv/bin/python. Airflow context keys will not be available. Please Install Airflow 2.8.2 in your environment to access them.
+[2024-11-20T01:22:08.415+0000] {process_utils.py:182} INFO - Executing cmd: /opt/airflow/soda_venv/bin/python /tmp/venv-calldthevezs/script.py /tmp/venv-calldthevezs/script.in /tmp/venv-calldthevezs/script.out /tmp/venv-calldthevezs/string_args.txt /tmp/venv-calldthevezs/termination.log
+[2024-11-20T01:22:08.422+0000] {process_utils.py:186} INFO - Output:
+[2024-11-20T01:22:08.943+0000] {process_utils.py:190} INFO - [01:22:08] File include/soda/configuration.yml does not exist
+[2024-11-20T01:22:08.944+0000] {process_utils.py:190} INFO -   +-> line=None,col=None in include/soda/configuration.yml
+[2024-11-20T01:22:08.984+0000] {process_utils.py:190} INFO - [01:22:08] Could not add configuration from file path include/soda/configuration.yml
+[2024-11-20T01:22:08.985+0000] {process_utils.py:190} INFO -   | input stream needs to be specified
+[2024-11-20T01:22:08.990+0000] {process_utils.py:190} INFO -   | Stacktrace:
+[2024-11-20T01:22:08.990+0000] {process_utils.py:190} INFO -   | Traceback (most recent call last):
+[2024-11-20T01:22:08.991+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/main.py", line 194, in scanner
+[2024-11-20T01:22:08.991+0000] {process_utils.py:190} INFO -   |     return self._scanner  # type: ignore
+[2024-11-20T01:22:08.991+0000] {process_utils.py:190} INFO -   | AttributeError: 'YAML' object has no attribute '_scanner'
+[2024-11-20T01:22:08.991+0000] {process_utils.py:190} INFO - 
+[2024-11-20T01:22:08.992+0000] {process_utils.py:190} INFO -   | During handling of the above exception, another exception occurred:
+[2024-11-20T01:22:08.992+0000] {process_utils.py:190} INFO - 
+[2024-11-20T01:22:08.992+0000] {process_utils.py:190} INFO -   | Traceback (most recent call last):
+[2024-11-20T01:22:08.993+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/reader.py", line 94, in stream
+[2024-11-20T01:22:08.993+0000] {process_utils.py:190} INFO -   |     return self._stream
+[2024-11-20T01:22:08.993+0000] {process_utils.py:190} INFO -   | AttributeError: 'Reader' object has no attribute '_stream'
+[2024-11-20T01:22:08.993+0000] {process_utils.py:190} INFO - 
+[2024-11-20T01:22:08.994+0000] {process_utils.py:190} INFO -   | During handling of the above exception, another exception occurred:
+[2024-11-20T01:22:08.994+0000] {process_utils.py:190} INFO - 
+[2024-11-20T01:22:08.994+0000] {process_utils.py:190} INFO -   | Traceback (most recent call last):
+[2024-11-20T01:22:08.995+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/main.py", line 426, in load
+[2024-11-20T01:22:08.995+0000] {process_utils.py:190} INFO -   |     return constructor.get_single_data()
+[2024-11-20T01:22:08.995+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 112, in get_single_data
+[2024-11-20T01:22:08.996+0000] {process_utils.py:190} INFO -   |     node = self.composer.get_single_node()
+[2024-11-20T01:22:08.996+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/composer.py", line 65, in get_single_node
+[2024-11-20T01:22:08.996+0000] {process_utils.py:190} INFO -   |     self.parser.get_event()
+[2024-11-20T01:22:08.997+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/parser.py", line 159, in get_event
+[2024-11-20T01:22:08.997+0000] {process_utils.py:190} INFO -   |     self.current_event = self.state()
+[2024-11-20T01:22:08.997+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/parser.py", line 174, in parse_stream_start
+[2024-11-20T01:22:08.997+0000] {process_utils.py:190} INFO -   |     token = self.scanner.get_token()
+[2024-11-20T01:22:08.998+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/parser.py", line 126, in scanner
+[2024-11-20T01:22:08.998+0000] {process_utils.py:190} INFO -   |     return self.loader.scanner
+[2024-11-20T01:22:08.998+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/main.py", line 196, in scanner
+[2024-11-20T01:22:08.998+0000] {process_utils.py:190} INFO -   |     self._scanner = self.Scanner(loader=self)
+[2024-11-20T01:22:08.999+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 85, in __init__
+[2024-11-20T01:22:08.999+0000] {process_utils.py:190} INFO -   |     self.reset_scanner()
+[2024-11-20T01:22:08.999+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 105, in reset_scanner
+[2024-11-20T01:22:08.999+0000] {process_utils.py:190} INFO -   |     self.fetch_stream_start()
+[2024-11-20T01:22:09.000+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 432, in fetch_stream_start
+[2024-11-20T01:22:09.000+0000] {process_utils.py:190} INFO -   |     mark = self.reader.get_mark()
+[2024-11-20T01:22:09.000+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/reader.py", line 163, in get_mark
+[2024-11-20T01:22:09.000+0000] {process_utils.py:190} INFO -   |     if self.stream is None:
+[2024-11-20T01:22:09.001+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/reader.py", line 96, in stream
+[2024-11-20T01:22:09.001+0000] {process_utils.py:190} INFO -   |     raise YAMLStreamError('input stream needs to be specified')
+[2024-11-20T01:22:09.001+0000] {process_utils.py:190} INFO -   | ruamel.yaml.error.YAMLStreamError: input stream needs to be specified
+[2024-11-20T01:22:09.001+0000] {process_utils.py:190} INFO - 
+[2024-11-20T01:22:09.002+0000] {process_utils.py:190} INFO -   | During handling of the above exception, another exception occurred:
+[2024-11-20T01:22:09.002+0000] {process_utils.py:190} INFO - 
+[2024-11-20T01:22:09.002+0000] {process_utils.py:190} INFO -   | Traceback (most recent call last):
+[2024-11-20T01:22:09.002+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/reader.py", line 94, in stream
+[2024-11-20T01:22:09.003+0000] {process_utils.py:190} INFO -   |     return self._stream
+[2024-11-20T01:22:09.003+0000] {process_utils.py:190} INFO -   | AttributeError: 'Reader' object has no attribute '_stream'
+[2024-11-20T01:22:09.003+0000] {process_utils.py:190} INFO - 
+[2024-11-20T01:22:09.004+0000] {process_utils.py:190} INFO -   | During handling of the above exception, another exception occurred:
+[2024-11-20T01:22:09.004+0000] {process_utils.py:190} INFO - 
+[2024-11-20T01:22:09.004+0000] {process_utils.py:190} INFO -   | Traceback (most recent call last):
+[2024-11-20T01:22:09.005+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/soda/scan.py", line 138, in add_configuration_yaml_file
+[2024-11-20T01:22:09.005+0000] {process_utils.py:190} INFO -   |     self._parse_configuration_yaml_str(
+[2024-11-20T01:22:09.005+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/soda/scan.py", line 191, in _parse_configuration_yaml_str
+[2024-11-20T01:22:09.005+0000] {process_utils.py:190} INFO -   |     environment_parse.parse_environment_yaml_str(configuration_yaml_str)
+[2024-11-20T01:22:09.006+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/soda/configuration/configuration_parser.py", line 31, in parse_environment_yaml_str
+[2024-11-20T01:22:09.006+0000] {process_utils.py:190} INFO -   |     environment_dict = self._parse_yaml_str(environment_yaml_str)
+[2024-11-20T01:22:09.006+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/soda/common/parser.py", line 64, in _parse_yaml_str
+[2024-11-20T01:22:09.007+0000] {process_utils.py:190} INFO -   |     file_dict = yaml.load(yaml_str)
+[2024-11-20T01:22:09.007+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/main.py", line 434, in load
+[2024-11-20T01:22:09.007+0000] {process_utils.py:190} INFO -   |     self._scanner.reset_scanner()
+[2024-11-20T01:22:09.007+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 105, in reset_scanner
+[2024-11-20T01:22:09.008+0000] {process_utils.py:190} INFO -   |     self.fetch_stream_start()
+[2024-11-20T01:22:09.008+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 432, in fetch_stream_start
+[2024-11-20T01:22:09.008+0000] {process_utils.py:190} INFO -   |     mark = self.reader.get_mark()
+[2024-11-20T01:22:09.008+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/reader.py", line 163, in get_mark
+[2024-11-20T01:22:09.009+0000] {process_utils.py:190} INFO -   |     if self.stream is None:
+[2024-11-20T01:22:09.009+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/reader.py", line 96, in stream
+[2024-11-20T01:22:09.009+0000] {process_utils.py:190} INFO -   |     raise YAMLStreamError('input stream needs to be specified')
+[2024-11-20T01:22:09.009+0000] {process_utils.py:190} INFO -   | ruamel.yaml.error.YAMLStreamError: input stream needs to be specified
+[2024-11-20T01:22:09.010+0000] {process_utils.py:190} INFO - 
+[2024-11-20T01:22:09.010+0000] {process_utils.py:190} INFO - [01:22:08] Path "include/soda/checks/tables" does not exist
+[2024-11-20T01:22:09.010+0000] {process_utils.py:190} INFO - [01:22:08] No valid checks found, 0 checks evaluated.
+[2024-11-20T01:22:09.010+0000] {process_utils.py:190} INFO - [01:22:08] File include/soda/configuration.yml does not exist
+[2024-11-20T01:22:09.011+0000] {process_utils.py:190} INFO -   +-> line=None,col=None in include/soda/configuration.yml
+[2024-11-20T01:22:09.011+0000] {process_utils.py:190} INFO - [01:22:08] Could not add configuration from file path include/soda/configuration.yml
+[2024-11-20T01:22:09.011+0000] {process_utils.py:190} INFO -   | input stream needs to be specified
+[2024-11-20T01:22:09.012+0000] {process_utils.py:190} INFO -   | Stacktrace:
+[2024-11-20T01:22:09.012+0000] {process_utils.py:190} INFO -   | Traceback (most recent call last):
+[2024-11-20T01:22:09.012+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/main.py", line 194, in scanner
+[2024-11-20T01:22:09.013+0000] {process_utils.py:190} INFO -   |     return self._scanner  # type: ignore
+[2024-11-20T01:22:09.013+0000] {process_utils.py:190} INFO -   | AttributeError: 'YAML' object has no attribute '_scanner'
+[2024-11-20T01:22:09.013+0000] {process_utils.py:190} INFO - 
+[2024-11-20T01:22:09.014+0000] {process_utils.py:190} INFO -   | During handling of the above exception, another exception occurred:
+[2024-11-20T01:22:09.014+0000] {process_utils.py:190} INFO - 
+[2024-11-20T01:22:09.014+0000] {process_utils.py:190} INFO -   | Traceback (most recent call last):
+[2024-11-20T01:22:09.014+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/reader.py", line 94, in stream
+[2024-11-20T01:22:09.015+0000] {process_utils.py:190} INFO -   |     return self._stream
+[2024-11-20T01:22:09.015+0000] {process_utils.py:190} INFO -   | AttributeError: 'Reader' object has no attribute '_stream'
+[2024-11-20T01:22:09.015+0000] {process_utils.py:190} INFO - 
+[2024-11-20T01:22:09.015+0000] {process_utils.py:190} INFO -   | During handling of the above exception, another exception occurred:
+[2024-11-20T01:22:09.016+0000] {process_utils.py:190} INFO - 
+[2024-11-20T01:22:09.016+0000] {process_utils.py:190} INFO -   | Traceback (most recent call last):
+[2024-11-20T01:22:09.016+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/main.py", line 426, in load
+[2024-11-20T01:22:09.017+0000] {process_utils.py:190} INFO -   |     return constructor.get_single_data()
+[2024-11-20T01:22:09.017+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 112, in get_single_data
+[2024-11-20T01:22:09.017+0000] {process_utils.py:190} INFO -   |     node = self.composer.get_single_node()
+[2024-11-20T01:22:09.017+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/composer.py", line 65, in get_single_node
+[2024-11-20T01:22:09.018+0000] {process_utils.py:190} INFO -   |     self.parser.get_event()
+[2024-11-20T01:22:09.018+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/parser.py", line 159, in get_event
+[2024-11-20T01:22:09.018+0000] {process_utils.py:190} INFO -   |     self.current_event = self.state()
+[2024-11-20T01:22:09.019+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/parser.py", line 174, in parse_stream_start
+[2024-11-20T01:22:09.019+0000] {process_utils.py:190} INFO -   |     token = self.scanner.get_token()
+[2024-11-20T01:22:09.019+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/parser.py", line 126, in scanner
+[2024-11-20T01:22:09.019+0000] {process_utils.py:190} INFO -   |     return self.loader.scanner
+[2024-11-20T01:22:09.020+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/main.py", line 196, in scanner
+[2024-11-20T01:22:09.020+0000] {process_utils.py:190} INFO -   |     self._scanner = self.Scanner(loader=self)
+[2024-11-20T01:22:09.020+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 85, in __init__
+[2024-11-20T01:22:09.021+0000] {process_utils.py:190} INFO -   |     self.reset_scanner()
+[2024-11-20T01:22:09.021+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 105, in reset_scanner
+[2024-11-20T01:22:09.021+0000] {process_utils.py:190} INFO -   |     self.fetch_stream_start()
+[2024-11-20T01:22:09.022+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 432, in fetch_stream_start
+[2024-11-20T01:22:09.022+0000] {process_utils.py:190} INFO -   |     mark = self.reader.get_mark()
+[2024-11-20T01:22:09.022+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/reader.py", line 163, in get_mark
+[2024-11-20T01:22:09.022+0000] {process_utils.py:190} INFO -   |     if self.stream is None:
+[2024-11-20T01:22:09.023+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/reader.py", line 96, in stream
+[2024-11-20T01:22:09.023+0000] {process_utils.py:190} INFO -   |     raise YAMLStreamError('input stream needs to be specified')
+[2024-11-20T01:22:09.023+0000] {process_utils.py:190} INFO -   | ruamel.yaml.error.YAMLStreamError: input stream needs to be specified
+[2024-11-20T01:22:09.023+0000] {process_utils.py:190} INFO - 
+[2024-11-20T01:22:09.024+0000] {process_utils.py:190} INFO -   | During handling of the above exception, another exception occurred:
+[2024-11-20T01:22:09.024+0000] {process_utils.py:190} INFO - 
+[2024-11-20T01:22:09.024+0000] {process_utils.py:190} INFO -   | Traceback (most recent call last):
+[2024-11-20T01:22:09.025+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/reader.py", line 94, in stream
+[2024-11-20T01:22:09.025+0000] {process_utils.py:190} INFO -   |     return self._stream
+[2024-11-20T01:22:09.025+0000] {process_utils.py:190} INFO -   | AttributeError: 'Reader' object has no attribute '_stream'
+[2024-11-20T01:22:09.025+0000] {process_utils.py:190} INFO - 
+[2024-11-20T01:22:09.026+0000] {process_utils.py:190} INFO -   | During handling of the above exception, another exception occurred:
+[2024-11-20T01:22:09.026+0000] {process_utils.py:190} INFO - 
+[2024-11-20T01:22:09.026+0000] {process_utils.py:190} INFO -   | Traceback (most recent call last):
+[2024-11-20T01:22:09.026+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/soda/scan.py", line 138, in add_configuration_yaml_file
+[2024-11-20T01:22:09.027+0000] {process_utils.py:190} INFO -   |     self._parse_configuration_yaml_str(
+[2024-11-20T01:22:09.027+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/soda/scan.py", line 191, in _parse_configuration_yaml_str
+[2024-11-20T01:22:09.027+0000] {process_utils.py:190} INFO -   |     environment_parse.parse_environment_yaml_str(configuration_yaml_str)
+[2024-11-20T01:22:09.028+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/soda/configuration/configuration_parser.py", line 31, in parse_environment_yaml_str
+[2024-11-20T01:22:09.028+0000] {process_utils.py:190} INFO -   |     environment_dict = self._parse_yaml_str(environment_yaml_str)
+[2024-11-20T01:22:09.028+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/soda/common/parser.py", line 64, in _parse_yaml_str
+[2024-11-20T01:22:09.029+0000] {process_utils.py:190} INFO -   |     file_dict = yaml.load(yaml_str)
+[2024-11-20T01:22:09.029+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/main.py", line 434, in load
+[2024-11-20T01:22:09.029+0000] {process_utils.py:190} INFO -   |     self._scanner.reset_scanner()
+[2024-11-20T01:22:09.029+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 105, in reset_scanner
+[2024-11-20T01:22:09.030+0000] {process_utils.py:190} INFO -   |     self.fetch_stream_start()
+[2024-11-20T01:22:09.030+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 432, in fetch_stream_start
+[2024-11-20T01:22:09.030+0000] {process_utils.py:190} INFO -   |     mark = self.reader.get_mark()
+[2024-11-20T01:22:09.031+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/reader.py", line 163, in get_mark
+[2024-11-20T01:22:09.031+0000] {process_utils.py:190} INFO -   |     if self.stream is None:
+[2024-11-20T01:22:09.031+0000] {process_utils.py:190} INFO -   |   File "/opt/airflow/soda_venv/lib/python3.8/site-packages/ruamel/yaml/reader.py", line 96, in stream
+[2024-11-20T01:22:09.031+0000] {process_utils.py:190} INFO -   |     raise YAMLStreamError('input stream needs to be specified')
+[2024-11-20T01:22:09.032+0000] {process_utils.py:190} INFO -   | ruamel.yaml.error.YAMLStreamError: input stream needs to be specified
+[2024-11-20T01:22:09.032+0000] {process_utils.py:190} INFO - 
+[2024-11-20T01:22:09.032+0000] {process_utils.py:190} INFO - [01:22:08] Path "include/soda/checks/tables" does not exist
+[2024-11-20T01:22:09.032+0000] {process_utils.py:190} INFO - Running Soda Scan ...
+[2024-11-20T01:22:09.033+0000] {process_utils.py:190} INFO - INFO   | Soda Core 3.2.2
+[2024-11-20T01:22:09.033+0000] {process_utils.py:190} INFO - ERROR  | File include/soda/configuration.yml does not exist | line=None,col=None in include/soda/configuration.yml
+[2024-11-20T01:22:09.033+0000] {process_utils.py:190} INFO - ERROR  | Could not add configuration from file path include/soda/configuration.yml | input stream needs to be specified
+[2024-11-20T01:22:09.034+0000] {process_utils.py:190} INFO - ERROR  | Path "include/soda/checks/tables" does not exist
+[2024-11-20T01:22:09.034+0000] {process_utils.py:190} INFO - DEBUG  | Scan execution starts
+[2024-11-20T01:22:09.034+0000] {process_utils.py:190} INFO - INFO   | Scan summary:
+[2024-11-20T01:22:09.034+0000] {process_utils.py:190} INFO - WARNING| No valid checks found, 0 checks evaluated.
+[2024-11-20T01:22:09.035+0000] {process_utils.py:190} INFO - INFO   | 3 errors.
+[2024-11-20T01:22:09.035+0000] {process_utils.py:190} INFO - INFO   | Oops! 3 errors. 0 failures. 0 warnings. 0 pass.
+[2024-11-20T01:22:09.035+0000] {process_utils.py:190} INFO - Traceback (most recent call last):
+[2024-11-20T01:22:09.035+0000] {process_utils.py:190} INFO -   File "/tmp/venv-calldthevezs/script.py", line 47, in <module>
+[2024-11-20T01:22:09.036+0000] {process_utils.py:190} INFO -     res = audit_customer_transactions(*arg_dict["args"], **arg_dict["kwargs"])
+[2024-11-20T01:22:09.036+0000] {process_utils.py:190} INFO -   File "/tmp/venv-calldthevezs/script.py", line 20, in audit_customer_transactions
+[2024-11-20T01:22:09.036+0000] {process_utils.py:190} INFO -     check(scan_name, checks_subpath, data_source)
+[2024-11-20T01:22:09.037+0000] {process_utils.py:190} INFO -   File "/opt/airflow/include/soda/helpers.py", line 22, in check
+[2024-11-20T01:22:09.037+0000] {process_utils.py:190} INFO -     raise ValueError('Soda Scan failed')
+[2024-11-20T01:22:09.037+0000] {process_utils.py:190} INFO - ValueError: Soda Scan failed
+[2024-11-20T01:22:09.049+0000] {taskinstance.py:2728} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 401, in execute
+    return super().execute(context=serializable_context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 861, in execute_callable
+    return self._execute_python_callable_in_subprocess(python_path)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 478, in _execute_python_callable_in_subprocess
+    raise AirflowException(error_msg) from None
+airflow.exceptions.AirflowException: Process returned non-zero exit status 1.
+Soda Scan failed
+[2024-11-20T01:22:09.053+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=customer_metrics, task_id=audit_customer_transactions, execution_date=20241119T000000, start_date=20241120T012208, end_date=20241120T012209
+[2024-11-20T01:22:09.063+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 89 for task audit_customer_transactions (Process returned non-zero exit status 1.
+Soda Scan failed; 495)
+[2024-11-20T01:22:09.072+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-11-20T01:22:09.093+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check

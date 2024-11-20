@@ -1,0 +1,56 @@
+[2024-11-20T03:18:39.910+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: customer_metrics.audit_customer_transactions manual__2024-11-20T03:17:14.554825+00:00 [queued]>
+[2024-11-20T03:18:39.918+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: customer_metrics.audit_customer_transactions manual__2024-11-20T03:17:14.554825+00:00 [queued]>
+[2024-11-20T03:18:39.918+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-11-20T03:18:39.932+0000] {taskinstance.py:2214} INFO - Executing <Task(_PythonExternalDecoratedOperator): audit_customer_transactions> on 2024-11-20 03:17:14.554825+00:00
+[2024-11-20T03:18:39.946+0000] {standard_task_runner.py:60} INFO - Started process 9829 to run task
+[2024-11-20T03:18:39.948+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'customer_metrics', 'audit_customer_transactions', 'manual__2024-11-20T03:17:14.554825+00:00', '--job-id', '107', '--raw', '--subdir', 'DAGS_FOLDER/customer_metrics.py', '--cfg-path', '/tmp/tmprca98x4f']
+[2024-11-20T03:18:39.950+0000] {standard_task_runner.py:88} INFO - Job 107: Subtask audit_customer_transactions
+[2024-11-20T03:18:39.993+0000] {task_command.py:423} INFO - Running <TaskInstance: customer_metrics.audit_customer_transactions manual__2024-11-20T03:17:14.554825+00:00 [running]> on host 4cf1ca1acf00
+[2024-11-20T03:18:40.062+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='customer_metrics' AIRFLOW_CTX_TASK_ID='audit_customer_transactions' AIRFLOW_CTX_EXECUTION_DATE='2024-11-20T03:17:14.554825+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-20T03:17:14.554825+00:00'
+[2024-11-20T03:18:40.097+0000] {python.py:913} WARNING - When checking for Airflow installed in virtual environment got Command '['/opt/airflow/soda_venv/bin/python', '-c', 'from airflow import __version__; print(__version__)']' returned non-zero exit status 1.
+[2024-11-20T03:18:40.098+0000] {python.py:914} WARNING - This means that Airflow is not properly installed by  /opt/airflow/soda_venv/bin/python. Airflow context keys will not be available. Please Install Airflow 2.8.2 in your environment to access them.
+[2024-11-20T03:18:40.145+0000] {process_utils.py:182} INFO - Executing cmd: /opt/airflow/soda_venv/bin/python /tmp/venv-callie2e2inx/script.py /tmp/venv-callie2e2inx/script.in /tmp/venv-callie2e2inx/script.out /tmp/venv-callie2e2inx/string_args.txt /tmp/venv-callie2e2inx/termination.log
+[2024-11-20T03:18:40.152+0000] {process_utils.py:186} INFO - Output:
+[2024-11-20T03:18:40.561+0000] {process_utils.py:190} INFO - [03:18:40] Path "include/soda/checks/tables" does not exist
+[2024-11-20T03:18:40.562+0000] {process_utils.py:190} INFO - [03:18:40] No valid checks found, 0 checks evaluated.
+[2024-11-20T03:18:40.563+0000] {process_utils.py:190} INFO - [03:18:40] Path "include/soda/checks/tables" does not exist
+[2024-11-20T03:18:40.574+0000] {process_utils.py:190} INFO - Running Soda Scan ...
+[2024-11-20T03:18:40.574+0000] {process_utils.py:190} INFO - INFO   | Soda Core 3.2.2
+[2024-11-20T03:18:40.575+0000] {process_utils.py:190} INFO - DEBUG  | Reading configuration file "include/soda/configuration.yml"
+[2024-11-20T03:18:40.575+0000] {process_utils.py:190} INFO - ERROR  | Path "include/soda/checks/tables" does not exist
+[2024-11-20T03:18:40.576+0000] {process_utils.py:190} INFO - DEBUG  | Scan execution starts
+[2024-11-20T03:18:40.576+0000] {process_utils.py:190} INFO - INFO   | Scan summary:
+[2024-11-20T03:18:40.577+0000] {process_utils.py:190} INFO - WARNING| No valid checks found, 0 checks evaluated.
+[2024-11-20T03:18:40.577+0000] {process_utils.py:190} INFO - INFO   | 1 errors.
+[2024-11-20T03:18:40.578+0000] {process_utils.py:190} INFO - INFO   | Oops! 1 error. 0 failures. 0 warnings. 0 pass.
+[2024-11-20T03:18:40.578+0000] {process_utils.py:190} INFO - Traceback (most recent call last):
+[2024-11-20T03:18:40.579+0000] {process_utils.py:190} INFO -   File "/tmp/venv-callie2e2inx/script.py", line 47, in <module>
+[2024-11-20T03:18:40.579+0000] {process_utils.py:190} INFO -     res = audit_customer_transactions(*arg_dict["args"], **arg_dict["kwargs"])
+[2024-11-20T03:18:40.579+0000] {process_utils.py:190} INFO -   File "/tmp/venv-callie2e2inx/script.py", line 20, in audit_customer_transactions
+[2024-11-20T03:18:40.579+0000] {process_utils.py:190} INFO -     check(scan_name, checks_subpath, data_source)
+[2024-11-20T03:18:40.580+0000] {process_utils.py:190} INFO -   File "/opt/airflow/include/soda/helpers.py", line 22, in check
+[2024-11-20T03:18:40.580+0000] {process_utils.py:190} INFO -     raise ValueError('Soda Scan failed')
+[2024-11-20T03:18:40.580+0000] {process_utils.py:190} INFO - ValueError: Soda Scan failed
+[2024-11-20T03:18:40.623+0000] {taskinstance.py:2728} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 401, in execute
+    return super().execute(context=serializable_context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 861, in execute_callable
+    return self._execute_python_callable_in_subprocess(python_path)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 478, in _execute_python_callable_in_subprocess
+    raise AirflowException(error_msg) from None
+airflow.exceptions.AirflowException: Process returned non-zero exit status 1.
+Soda Scan failed
+[2024-11-20T03:18:40.627+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=customer_metrics, task_id=audit_customer_transactions, execution_date=20241120T031714, start_date=20241120T031839, end_date=20241120T031840
+[2024-11-20T03:18:40.639+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 107 for task audit_customer_transactions (Process returned non-zero exit status 1.
+Soda Scan failed; 9829)
+[2024-11-20T03:18:40.683+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-11-20T03:18:40.706+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check
